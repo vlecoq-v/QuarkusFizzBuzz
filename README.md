@@ -8,7 +8,6 @@ The `Make` command in the root folder will give you available commands.
 
 - JDK 11+ installed with JAVA_HOME configured appropriately
 - Optionaly quarkus CLI
-- jq is a plus when testing with curl
 
 ## Running the application in dev mode
 

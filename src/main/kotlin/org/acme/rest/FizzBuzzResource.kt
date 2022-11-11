@@ -12,19 +12,14 @@ import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
 
 data class FizzBuzzRequest(
-    @get:NotBlank
-    val str1: String = "",
-    @get:Min(1)
-    val int1: Int = 1,
-    @get:NotBlank
-    val str2: String = "",
-    @get:Min(1)
-    val int2: Int = 1,
-    @get:Min(1)
-    val limit: Int = 1,
+    @field:NotBlank val str1: String = "",
+    @field:Min(1) val int1: Int = 1,
+    @field:NotBlank val str2: String = "",
+    @field:Min(1) val int2: Int = 1,
+    @field:Min(1) val limit: Int = 1,
 )
 
-data class FizzBuzzResult(val fizzBuzzed: List<String>)
+data class FizzBuzzResponse(val fizzBuzzed: String)
 
 @Path("/fizzbuzz")
 class FizzBuzzResource {
@@ -35,8 +30,8 @@ class FizzBuzzResource {
      */
     @POST
     @Produces(MediaType.APPLICATION_JSON) @Consumes(MediaType.APPLICATION_JSON)
-    fun fizzBuzzResource(@Valid req: FizzBuzzRequest): FizzBuzzResult {
-        return FizzBuzzResult(
+    fun fizzBuzzResource(@Valid req: FizzBuzzRequest): FizzBuzzResponse {
+        return FizzBuzzResponse(
             fizzBuzzService(
                 FizzBuzzParam(req.int1, req.str1),
                 FizzBuzzParam(req.int2, req.str2),
