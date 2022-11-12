@@ -36,11 +36,15 @@ Run `Make test.info` to run with more logs.
 
 ## Packaging and running the application
 
-The application can be packaged using:`make build`
+The application can be packaged using:`make build`.
 
 It produces the `quarkus-run.jar` file in the `build/quarkus-app/` directory.
 
 The application is now runnable using `java -jar build/quarkus-app/quarkus-run.jar`.
+
+### Docker
+
+The app is dockerized and can be run with `make docker.build docker.logs`.
 
 ## Related Guides
 
