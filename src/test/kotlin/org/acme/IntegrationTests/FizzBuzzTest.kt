@@ -1,6 +1,5 @@
 package org.acme.IntegrationTests
 
-import io.quarkus.test.junit.QuarkusIntegrationTest
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import org.acme.rest.FizzBuzzRequest

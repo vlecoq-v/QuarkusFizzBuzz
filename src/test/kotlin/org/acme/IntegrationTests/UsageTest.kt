@@ -12,14 +12,15 @@ import javax.ws.rs.core.MediaType
 class UsageTest {
     @Test
     fun usageTest() {
-        println(given()
-            .`when`()
-            .contentType(MediaType.APPLICATION_JSON)
-            .get("/usage")
-            .then()
-            .statusCode(200)
-            .extract()
-            .asPrettyString()
+        println(
+            given()
+                .`when`()
+                .contentType(MediaType.APPLICATION_JSON)
+                .get("/usage")
+                .then()
+                .statusCode(200)
+                .extract()
+                .asPrettyString()
         )
     }
 }

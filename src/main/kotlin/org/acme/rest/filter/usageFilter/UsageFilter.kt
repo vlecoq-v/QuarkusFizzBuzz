@@ -17,7 +17,7 @@ import javax.ws.rs.ext.Provider
 @Priority(1)
 @PreMatching
 @ApplicationScoped
-class UsageFilter(val usageService: UsageService): ContainerRequestFilter {
+class UsageFilter(val usageService: UsageService) : ContainerRequestFilter {
     @Context var info: UriInfo? = null
 
     override fun filter(context: ContainerRequestContext) = usageService.inc(info!!.path)
